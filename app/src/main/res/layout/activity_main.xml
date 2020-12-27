@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/user">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/slogan"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:gravity="center_horizontal"
+        android:padding="4dp"
+        android:text="Discover a new way to rent hub."
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+        android:textSize="20dp"
+        android:textStyle="bold|italic">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/main_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="169dp"
+        android:background="@drawable/buttons"
+        android:padding="18dp"
+        android:text="Already have and Account? Login"
+        android:textAllCaps="false"
+        android:textSize="18dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/main_signup_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_login_btn"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/input_design"
+        android:padding="18dp"
+        android:text="Sign up Now!"
+        android:textAllCaps="false"
+        android:textSize="18dp">
+
+    </Button>
+</RelativeLayout>

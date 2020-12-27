@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_dark"
+    tools:context=".loginActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/user">
+
+    </ImageView>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="77dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:drawableLeft="@android:drawable/sym_action_email"
+        android:hint="E-mail address"
+        android:inputType="textEmailAddress"
+        android:padding="18dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="17sp"
+        android:textStyle="bold">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:drawableLeft="@android:drawable/sym_action_call"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:padding="18dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="17sp"
+        android:textStyle="bold">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:drawableLeft="@android:drawable/ic_lock_lock"
+        android:hint="Password here"
+        android:inputType="textPassword"
+        android:padding="18dp"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent"
+        android:textSize="17sp"
+        android:textStyle="bold">
+    </EditText>
+    <LinearLayout
+        android:id="@+id/linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="5dp">
+        <com.rey.material.widget.CheckBox
+            android:id="@+id/remember_me_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Material.Drawable.CheckBox"
+            android:text="Remember me"
+            android:textColor="@color/colorAccent"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="18dp"
+            />
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:textColor="@color/colorAccent"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="80dp">
+
+        </TextView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="366dp"
+        android:layout_height="62dp"
+        android:layout_below="@+id/linearlayout1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/buttons"
+        android:padding="18dp"
+        android:text="LOG IN"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18dp"
+        android:textStyle="bold">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/admin_panel_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginbtn"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="I'm an Admin?"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="21dp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/not_admin_panel_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/admin_panel_link"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="219dp"
+        android:text="I'm not an Admin?"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:visibility="invisible"
+        tools:ignore="UnknownId">
+    </TextView>
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "890817134919",
+    "firebase_url": "https://rent-hub-f5ac6-default-rtdb.firebaseio.com",
+    "project_id": "rent-hub-f5ac6",
+    "storage_bucket": "rent-hub-f5ac6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890817134919:android:fc7d020c79cf4681630c62",
+        "android_client_info": {
+          "package_name": "com.example.rent_hub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890817134919-b9ni52hr47ik1n0ag1e2d780a8reomm9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rent_hub",
+            "certificate_hash": "d07a7060ffd1ad6f3b3b38622eb97ab69d2c4f84"
+          }
+        },
+        {
+          "client_id": "890817134919-k31hh2stj7iqecljt6j6r33s8r9lsueu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKfdd5T7WXhl6lk4KzKkqzmQmxL7fukYM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890817134919-k31hh2stj7iqecljt6j6r33s8r9lsueu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
