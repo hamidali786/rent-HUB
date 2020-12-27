@@ -1,5 +1,4 @@
 package com.example.rent_hub;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-
 public class RegisterActivity extends AppCompatActivity {
     public Button create_account_btn;
     public EditText register_email, register_username, register_phone, register_user_address, register_password;
