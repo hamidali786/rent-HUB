@@ -139,7 +139,8 @@
         android:text="I'm an Admin?"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="21dp"
-        android:textStyle="bold">
+        android:textStyle="bold"
+        tools:ignore="UnknownId">
 
     </TextView>
 

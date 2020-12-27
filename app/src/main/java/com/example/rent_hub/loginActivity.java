@@ -3,11 +3,13 @@ package com.example.rent_hub;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rent_hub.Model.Users;
@@ -29,10 +31,10 @@ public class loginActivity extends AppCompatActivity {
     public EditText forgot_password;
     public Button login_btn;
     public ProgressDialog loadingBar;
-    public EditText admin_panel_link, not_admin_panel_link;
+    private TextView admin_panel_link, not_admin_panel_link;
     public String parentDBName ="Users";
     private DataSnapshot dataSnapshot;
-
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -40,6 +42,8 @@ public class loginActivity extends AppCompatActivity {
         email = findViewById( R.id.email);
         phone = findViewById( R.id.phone );
         password = findViewById( R.id.password );
+        admin_panel_link =findViewById( R.id.admin_panel_link);
+        not_admin_panel_link = findViewById( R.id.not_admin_panel_link);
         loadingBar= new ProgressDialog( this );
         remember_me_cb = findViewById( R.id.remember_me_cb );
         //Paper dependency from Paper github for remember me check box to stored email once click
@@ -51,7 +55,24 @@ public class loginActivity extends AppCompatActivity {
                 loginUser(); //create login user method
             }
         } );
-
+        admin_panel_link.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login_btn.setText( "Login Admin" ); //Login admin
+                admin_panel_link.setVisibility( View.INVISIBLE ); // when click on admin link then disable admin link
+                not_admin_panel_link.setVisibility( View.VISIBLE ); // enable not admin link
+                parentDBName = "Admins";
+            }
+        } );
+        not_admin_panel_link.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                login_btn.setText( "LogIn" );
+                admin_panel_link.setVisibility( View.VISIBLE ); // when click on admin link then disable admin link
+                not_admin_panel_link.setVisibility( View.INVISIBLE ); // enable not admin link
+                parentDBName = "Users";
+            }
+        } );
     }
 
     private void loginUser() {
@@ -105,15 +126,24 @@ public class loginActivity extends AppCompatActivity {
                     if (usersData.getPhoneNo().equals( phoneNo )){
                         if (usersData.getPassword().equals( password)){
                             if (usersData.getMail().equals( mail)){
-                                Toast.makeText(loginActivity.this, "Logged In Successfully.", Toast.LENGTH_LONG ).show();
-                                loadingBar.dismiss();
-                                //move to home activity if user login successfully form login activity intent
-                                Intent intent = new Intent( loginActivity.this, homeActivity.class );
-                                startActivity( intent );
+                                if (parentDBName.equals( "Admins" )){
+                                    Toast.makeText(loginActivity.this, "Welcome to Admin dashboard you Logged In Successfully.", Toast.LENGTH_LONG ).show();
+                                    loadingBar.dismiss();
+                                    //move admin to add activity new services activity if user login successfully form login activity intent
+                                    Intent intent = new Intent( loginActivity.this, adminAddServicesActivity.class );
+                                    startActivity( intent );
+                                }
+                                else if (parentDBName.equals( "Users" )){
+                                    Toast.makeText(loginActivity.this, "Logged In Successfully.", Toast.LENGTH_LONG ).show();
+                                    loadingBar.dismiss();
+                                    //move to home activity if user login successfully form login activity intent
+                                    Intent intent = new Intent( loginActivity.this, homeActivity.class );
+                                    startActivity( intent );
+                                }
                             }
                             else {
                                 loadingBar.dismiss();
-                                Toast.makeText( loginActivity.this, "Password you Entered is invalide.", Toast.LENGTH_LONG ).show();
+                                Toast.makeText( loginActivity.this, "Password you Entered is invalid.", Toast.LENGTH_LONG ).show();
 
                             }
                         }
